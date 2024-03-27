@@ -21,7 +21,7 @@ export default function PortfolioDetails({ params }: { params: { id: string } })
 
     useEffect(() => {
         getPortfolioDetailsData(id);
-    }, []);
+    }, [id]);
 
     return (
         <main id="main">
