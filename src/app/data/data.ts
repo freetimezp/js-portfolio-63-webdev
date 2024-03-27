@@ -377,7 +377,7 @@ export const resume = [
     content: [
       {
         id: 1,
-        title: 'Brandon Johnson',
+        title: 'Jenya Onoprienko',
         period: '',
         brief: `Innovative and deadline-driven Graphic Designer with 3+ years
         of experience designing and developing user-centered
