@@ -6,6 +6,7 @@ import Resume from "./sections/Resume";
 import Portfolio from "./sections/Portfolio";
 import Services from "./sections/Services";
 import Testimonials from "./sections/Testimonials";
+import Contact from "./sections/Contact";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Portfolio />
         <Services />
         <Testimonials />
+        <Contact />
 
         <div style={{ height: '200vh' }}></div>
       </main>
