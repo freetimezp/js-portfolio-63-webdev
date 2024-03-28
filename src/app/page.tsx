@@ -22,7 +22,6 @@ export default function Home() {
         <Testimonials />
         <Contact />
 
-        <div style={{ height: '200vh' }}></div>
       </main>
     </>
   );
