@@ -11,6 +11,7 @@ import "./globals.css";
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import BackToTopBtn from './components/BackToTopBtn';
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <BackToTopBtn />
       </body>
     </html>
   );
