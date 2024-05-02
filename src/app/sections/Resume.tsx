@@ -1,16 +1,28 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useState } from 'react';
 import './resume.css';
 import SectionTitle from '../components/SectionTitle';
 import ResumeItem from '../components/ResumeItem';
 
-async function getResumeData() {
-    const res = await fetch('https://js-portfolio-63-webdev.vercel.app/api/resume');
+export default function Resume() {
+    const [data, setData] = useState<[] | any>([]);
+    const [items, setItems] = useState<[] | any>([]);
 
-    return res.json();
-}
+    const getResumeData = async () => {
+        await fetch('https://js-portfolio-63-webdev.vercel.app/api/resume')
+            .then(res => res.json())
+            .then(data => setData(data))
+            .catch(err => console.log(err.message));
+    };
 
-export default async function Resume() {
-    const items: [] | any = await getResumeData();
+    useEffect(() => {
+        getResumeData();
+    }, []);
+
+    useEffect(() => {
+        setItems(data);
+    }, [data]);
+
     console.log(items);
 
     return (
@@ -63,8 +75,6 @@ export default async function Resume() {
                     </div>
                 </div>
             </div>
-
-
         </section>
     );
 }
