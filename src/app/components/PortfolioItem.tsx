@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import './portfolioItem.css';
 
-import Glightbox from 'glightbox';
+//import Glightbox from 'glightbox';
 
 export default function PortfolioItem({ item }: {
     item: {
@@ -14,16 +14,16 @@ export default function PortfolioItem({ item }: {
     }
 }) {
 
-    useEffect(() => {
-        new Glightbox({
-            selector: '.portfolio-lightbox',
-        });
-        new Glightbox({
-            selector: '.portfolio-details-lightbox',
-            width: '90%',
-            height: '90vh',
-        });
-    }, []);
+    // useEffect(() => {
+    //     new Glightbox({
+    //         selector: '.portfolio-lightbox',
+    //     });
+    //     new Glightbox({
+    //         selector: '.portfolio-details-lightbox',
+    //         width: '90%',
+    //         height: '90vh',
+    //     });
+    // }, []);
 
     return (
         <div className='col-lg-4 col-md-6 portfolio-item'>

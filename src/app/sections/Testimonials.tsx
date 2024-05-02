@@ -13,7 +13,7 @@ export default function Testimonials() {
     const [slides, setSlides] = useState<any | []>([]);
 
     const getTestimonialsData = () => {
-        fetch('http://localhost:3000/api/testimonials')
+        fetch('https://js-portfolio-63-webdev.vercel.app/api/testimonials')
             .then(res => res.json())
             .then(data => setSlides(data))
             .catch(err => console.log(err.message));

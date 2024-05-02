@@ -4,7 +4,7 @@ import SectionTitle from '../components/SectionTitle';
 import ServicesItem from '../components/ServicesItem';
 
 async function getServicesData() {
-    const res = await fetch('http://localhost:3000/api/services');
+    const res = await fetch('https://js-portfolio-63-webdev.vercel.app/api/services');
     return res.json();
 }
 
