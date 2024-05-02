@@ -16,11 +16,11 @@ export default function Home() {
         <About />
         <Facts />
         <Skills />
-        <Resume />
+        {/* <Resume />
         <Portfolio />
         <Services />
         <Testimonials />
-        <Contact />
+        <Contact /> */}
 
       </main>
     </>
