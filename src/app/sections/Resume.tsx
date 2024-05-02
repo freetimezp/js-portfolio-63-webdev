@@ -23,7 +23,7 @@ export default function Resume() {
         setItems(data);
     }, [data]);
 
-    console.log(items);
+    //console.log(items);
 
     return (
         <section id="resume" className='resume'>
@@ -37,43 +37,45 @@ export default function Resume() {
                     blanditiis.`}
                 />
 
-                <div className='row'>
-                    <div className="col-lg-6">
-                        <h3 className="resume-title">{items[0].category}</h3>
-                        {items && items.length > 0 && items[0].content.map((item: {
-                            id: number;
-                            title: string;
-                            period: string;
-                            brief: string;
-                            details: [string];
-                        }) => (
-                            <ResumeItem key={item.id} item={item} />
-                        ))}
+                {items && items.length > 0 && (
+                    <div className='row'>
+                        <div className="col-lg-6">
+                            <h3 className="resume-title">{items[0]?.category}</h3>
+                            {items && items.length > 0 && items[0].content.map((item: {
+                                id: number;
+                                title: string;
+                                period: string;
+                                brief: string;
+                                details: [string];
+                            }) => (
+                                <ResumeItem key={item.id} item={item} />
+                            ))}
 
-                        <h3 className="resume-title">{items[1].category}</h3>
-                        {items && items.length > 0 && items[1].content.map((item: {
-                            id: number;
-                            title: string;
-                            period: string;
-                            brief: string;
-                            details: [string];
-                        }) => (
-                            <ResumeItem key={item.id} item={item} />
-                        ))}
+                            <h3 className="resume-title">{items[1]?.category}</h3>
+                            {items && items.length > 0 && items[1].content.map((item: {
+                                id: number;
+                                title: string;
+                                period: string;
+                                brief: string;
+                                details: [string];
+                            }) => (
+                                <ResumeItem key={item.id} item={item} />
+                            ))}
+                        </div>
+                        <div className="col-lg-6">
+                            <h3 className="resume-title">{items[2]?.category}</h3>
+                            {items && items.length > 0 && items[2].content.map((item: {
+                                id: number;
+                                title: string;
+                                period: string;
+                                brief: string;
+                                details: [string];
+                            }) => (
+                                <ResumeItem key={item.id} item={item} />
+                            ))}
+                        </div>
                     </div>
-                    <div className="col-lg-6">
-                        <h3 className="resume-title">{items[2].category}</h3>
-                        {items && items.length > 0 && items[2].content.map((item: {
-                            id: number;
-                            title: string;
-                            period: string;
-                            brief: string;
-                            details: [string];
-                        }) => (
-                            <ResumeItem key={item.id} item={item} />
-                        ))}
-                    </div>
-                </div>
+                )}
             </div>
         </section>
     );
