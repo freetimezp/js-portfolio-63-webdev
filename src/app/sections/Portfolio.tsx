@@ -12,7 +12,7 @@ export default function Portfolio() {
     const [items, setItems] = useState([]);
 
     const getPortfolioData = () => {
-        fetch('http://localhost:3000/api/portfolio')
+        fetch('https://js-portfolio-63-webdev.vercel.app/api/portfolio')
             .then(res => res.json())
             .then(portfolio => setData(portfolio))
             .catch(err => console.log(err.message));
