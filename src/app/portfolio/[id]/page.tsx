@@ -7,14 +7,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
-import { accessSync } from 'fs';
 
 export default function PortfolioDetails({ params }: { params: { id: string } }) {
     const id = params.id;
     const [item, setItem] = useState<any | []>([]);
 
     const getPortfolioDetailsData = (id: string) => {
-        const result = fetch(`https://js-portfolio-63-webdev.vercel.app/api/portfolio/${id}`)
+        fetch(`https://js-portfolio-63-webdev.vercel.app/api/portfolio/${id}`)
             .then(res => res.json())
             .then(data => setItem(data))
             .catch(err => console.log(err.message));
