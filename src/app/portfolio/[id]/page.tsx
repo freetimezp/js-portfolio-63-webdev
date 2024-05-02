@@ -13,8 +13,8 @@ export default function PortfolioDetails({ params }: { params: { id: string } })
     const id = params.id;
     const [item, setItem] = useState<any | []>([]);
 
-    const getPortfolioDetailsData = async (id: string) => {
-        const result = await fetch(`https://js-portfolio-63-webdev.vercel.app/api/portfolio/${id}`)
+    const getPortfolioDetailsData = (id: string) => {
+        const result = fetch(`https://js-portfolio-63-webdev.vercel.app/api/portfolio/${id}`)
             .then(res => res.json())
             .then(data => setItem(data))
             .catch(err => console.log(err.message));
