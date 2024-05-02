@@ -12,8 +12,8 @@ import TestimonialsItem from '../components/TestimonialsItem';
 export default function Testimonials() {
     const [slides, setSlides] = useState<any | []>([]);
 
-    const getTestimonialsData = () => {
-        fetch('https://js-portfolio-63-webdev.vercel.app/api/testimonials')
+    const getTestimonialsData = async () => {
+        await fetch('https://js-portfolio-63-webdev.vercel.app/api/testimonials')
             .then(res => res.json())
             .then(data => setSlides(data))
             .catch(err => console.log(err.message));

@@ -1,15 +1,27 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useState } from 'react';
 import './services.css';
 import SectionTitle from '../components/SectionTitle';
 import ServicesItem from '../components/ServicesItem';
 
-async function getServicesData() {
-    const res = await fetch('https://js-portfolio-63-webdev.vercel.app/api/services');
-    return res.json();
-}
+export default function Services() {
+    const [data, setData] = useState([]);
+    const [items, setItems] = useState([]);
 
-export default async function Services() {
-    const items: [] = await getServicesData();
+    const getServicesData = async () => {
+        await fetch('https://js-portfolio-63-webdev.vercel.app/api/services')
+            .then(res => res.json())
+            .then(services => setData(services))
+            .catch(err => console.log(err.message));
+    };
+
+    useEffect(() => {
+        getServicesData();
+    }, []);
+
+    useEffect(() => {
+        setItems(data);
+    }, [data]);
 
     return (
         <section id="services" className='services'>
@@ -23,7 +35,7 @@ export default async function Services() {
                 />
 
                 <div className="row">
-                    {items.map((item: {
+                    {items && items.length > 0 && items.map((item: {
                         id: number;
                         delay: string;
                         svgPath: string;
